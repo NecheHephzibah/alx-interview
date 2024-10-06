@@ -3,6 +3,7 @@
 Implementing Pascal’s Triangle in Python
 """
 
+
 def pascal_triangle(n):
     """
     Generates Pascal's triangle with the given number of rows.
@@ -19,11 +20,11 @@ def pascal_triangle(n):
         for row in range(1, n + 1):
             current_row = []
             current_value = 1
-            
+
             for col in range(1, row + 1):
                 current_row.append(current_value)
                 current_value = current_value * (row - col) // col
-            
+
             p_triangle.append(current_row)
-    
+
     return p_triangle
