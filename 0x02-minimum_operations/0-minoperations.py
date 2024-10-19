@@ -5,7 +5,7 @@ characters
 """
 
 
-def min_operations(n):
+def minOperations(n):
     """
     Calculates the fewest number of operations to get exactly target_chars
     H characters.
