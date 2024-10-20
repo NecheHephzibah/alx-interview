@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Solves the lock boxes puzzle using a depth-first search approach"""
 
+
 def canUnlockAll(boxes):
     """
     Determines if all the boxes can be opened.
@@ -24,9 +25,13 @@ def canUnlockAll(boxes):
 
     return len(unlocked) == n
 
-# The following lines are not necessary for the solution, but can be used for testing
+# The following lines are not necessary for the solution,
+# but can be used for testing
+
+
 if __name__ == "__main__":
     # Test cases
     print(canUnlockAll([[1], [2], [3], [4], []]))
-    print(canUnlockAll([[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]))
+    print(canUnlockAll([[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1],
+                        [6]]))
     print(canUnlockAll([[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]))
