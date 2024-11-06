@@ -5,7 +5,7 @@ import sys
 
 
 if len(sys.argv) != 2 or not sys.argv[1].isdigit() or int(sys.argv[1]) < 4:
-    print("Usage: nqueens N, where N is an integer"
+    print("Usage: nqueens N, where N is an integer "
           "greater than or equal to 4.")
     exit(1)
 
@@ -61,6 +61,7 @@ def solve_n_queens(board, col):
 
 def print_solutions(solutions):
     """Print all solutions to the N Queens problem"""
+    solutions.sort()
     for solution in solutions:
         print(solution)
 
