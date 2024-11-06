@@ -5,10 +5,12 @@ import sys
 
 
 if len(sys.argv) != 2 or not sys.argv[1].isdigit() or int(sys.argv[1]) < 4:
-    print("Usage: nqueens N, where N is an integer greater than or equal to 4.")
+    print("Usage: nqueens N, where N is an integer"
+          "greater than or equal to 4.")
     exit(1)
 
 num_queens = int(sys.argv[1])
+
 
 def is_safe(board, row, col):
     """Check if it's safe to place a queen on board[row][col]"""
@@ -29,6 +31,7 @@ def is_safe(board, row, col):
 
     return True
 
+
 def solve_n_queens(board, col):
     """Recursive function to solve the N Queens problem"""
     # Base case: If all queens are placed, return True
@@ -48,11 +51,13 @@ def solve_n_queens(board, col):
             # Recur to place rest of the queens
             solve_n_queens(board, col + 1)
 
-            # If placing a queen here doesn't lead to a solution, remove the queen
+            # If placing a queen here doesn't lead to a solution,
+            # remove the queen
             board[i][col] = 0
 
     # If the queen can't be placed in any row in this column, return False
     return False
+
 
 def print_solutions(solutions):
     """Print all solutions to the N Queens problem"""
