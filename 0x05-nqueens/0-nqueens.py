@@ -1,15 +1,21 @@
 #!/usr/bin/python3
-"""a program that solves the N queens problem."""
-
+"""A program that solves the N queens problem."""
 import sys
 
 
-if len(sys.argv) != 2 or not sys.argv[1].isdigit() or int(sys.argv[1]) < 4:
-    print("Usage: nqueens N, where N is an integer "
-          "greater than or equal to 4.")
+if len(sys.argv) != 2:
+    print("Usage: nqueens N")
     exit(1)
 
-num_queens = int(sys.argv[1])
+try:
+    num_queens = int(sys.argv[1])
+except ValueError:
+    print("N must be a number")
+    exit(1)
+
+if num_queens < 4:
+    print("N must be at least 4")
+    exit(1)
 
 
 def is_safe(board, row, col):
@@ -47,15 +53,12 @@ def solve_n_queens(board, col):
     for i in range(num_queens):
         if is_safe(board, i, col):
             board[i][col] = 1
-
             # Recur to place rest of the queens
             solve_n_queens(board, col + 1)
-
-            # If placing a queen here doesn't lead to a solution,
+            # If placing queen here doesn't lead to a solution,
             # remove the queen
             board[i][col] = 0
 
-    # If the queen can't be placed in any row in this column, return False
     return False
 
 
@@ -68,6 +71,6 @@ def print_solutions(solutions):
 
 if __name__ == "__main__":
     solutions = []
-    board = [[0 for _ in range(num_queens)] for _ in range(num_queens)]
+    board = [[0 for x in range(num_queens)] for x in range(num_queens)]
     solve_n_queens(board, 0)
     print_solutions(solutions)
