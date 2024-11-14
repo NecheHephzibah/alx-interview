@@ -3,7 +3,7 @@ const helper = require('util');
 const apiCall = helper.promisify(require('request'));
 const queryId = process.argv[2];
 
-async function fetchItemDetails(recordId) {
+async function fetchItemDetails (recordId) {
   try {
     if (!recordId) {
       throw new Error('Please provide a film ID');
