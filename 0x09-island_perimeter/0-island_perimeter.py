@@ -2,6 +2,8 @@
 """
 Module for calculating the perimeter of an island grid.
 """
+
+
 def island_perimeter(grid):
     """
     Computes the perimeter of an island with no lakes.
